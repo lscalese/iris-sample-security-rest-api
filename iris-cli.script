@@ -1,0 +1,12 @@
+    // Unexpire passwords to simplify dev mode. Comment these two lines for Production use
+    zn "%SYS"
+    Do ##class(Security.Users).UnExpireUserPasswords("*")
+
+    // load all the code of the project as a ZPM package
+    zn "USER"
+    zpm "install openapi-client-gen"
+    
+    Set features("simpleHttpClientOnly") = 1
+    Set sc = ##class(dc.openapi.client.Spec).generateApp("IrisSecurity", "https://raw.githubusercontent.com/lscalese/iris-config-api/master/swagger-security.json",.features)
+    Write !,"Status : ",$SYSTEM.Status.GetOneErrorText(sc)
+    halt

@@ -1,11 +1,12 @@
 {
     "files.associations": {
-    
-        "Dockerfile*": "dockerfile",
-        "iris.script": "objectscript"
+      "Dockerfile*": "dockerfile",
+        "iris.script": "objectscript",
+        "iris-cli.script": "objectscript",
+        "iris-srv.script": "objectscript"
       },
     "objectscript.conn" :{
-      "active":true,
+      "active": true,
       "ns": "USER",
       "username": "_SYSTEM",
       "password": "SYS",
@@ -13,9 +14,10 @@
         "service": "iris",
         "internalPort": 52773
       },
-    "links" :{
-      "UnitTest Portal" :"${serverUrl}/csp/sys/%25UnitTest.Portal.Home.cls?$NAMESPACE=IRISAPP"
-    }
+      "links": {
+        "Swagger-UI": "${serverUrl}/swagger-ui/index.html?"
+      },
+      "server": "iris-security-rest-client"
     }
 
 }

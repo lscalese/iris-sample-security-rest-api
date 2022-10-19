@@ -1,14 +1,27 @@
 version: '3.6'
 services:
   iris:
+    container_name: iris-security-rest-server
     build: 
       context: .
       dockerfile: Dockerfile
-    restart: always
+      args:
+        IRISSCRIPT: iris-srv.script
     command: --check-caps false
     ports: 
-      - 1972
-      - 52773
-      - 53773
+      - 32773:52773
+    volumes:
+      - ./:/irisrun/repo
+
+  iris-cli:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        IRISSCRIPT: iris-cli.script
+    container_name: iris-security-rest-client
+    command: --check-caps false
+    ports: 
+      - 31773:52773
     volumes:
       - ./:/irisrun/repo
