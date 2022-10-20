@@ -11,7 +11,7 @@
       "username": "_SYSTEM",
       "password": "SYS",
       "docker-compose": {
-        "service": "iris",
+        "service": "iris-cli",
         "internalPort": 52773
       },
       "links": {

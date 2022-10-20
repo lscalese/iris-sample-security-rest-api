@@ -8,7 +8,8 @@
     zpm "install swagger-ui" 
 
     // load the example of REST custom security implementation.
-    zpm "load /home/irisowner/irisbuild/ -v"
+    ;zpm "load /home/irisowner/irisbuild/ -v"
+    Do $SYSTEM.OBJ.Load("/home/irisowner/irisbuild/src/iris/dc/sample/RestSecurity.cls", "ck")
     // Install /config-api web application
     Do ##class(Api.Config.Developers.Install).installMainRESTApp() 
     

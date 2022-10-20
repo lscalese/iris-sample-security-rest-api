@@ -27,3 +27,10 @@ Open the following url in your browser [http://localhost:32773/swagger-ui/index.
 and explore [http://localhost:32773/config-api/security/](http://localhost:32773/config-api/security/) to open the specification.  
 Use _system\SYS to login.  
 
+## Test a request from an IRIS client
+
+```
+Do ##class(iris.dc.sample.ObjectScriptRestClient).ExampleGetUserList()
+; or
+Do ##class(iris.dc.sample.ObjectScriptRestClient).ExampleGetWebAppList()
+```
