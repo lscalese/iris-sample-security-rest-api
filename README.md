@@ -29,6 +29,13 @@ Use _system\SYS to login.
 
 ## Test a request from an IRIS client
 
+Open a terminal on the iris-cli instance : 
+
+```
+docker exec -it iris-security-rest-client iris session iris
+```
+
+Get the user or the web application list.
 ```
 Do ##class(iris.dc.sample.ObjectScriptRestClient).ExampleGetUserList()
 ; or
